@@ -14,7 +14,7 @@ ocr = ddddocr.DdddOcr(show_ad=False)
 
 USERNAME = os.environ.get('USERNAME','')
 PASSWORD = os.environ.get('PASSWORD','')
-RETRY    = os.environ.get('RETRY',5)
+RETRY    = int(os.environ.get('RETRY',3))
 
 pubkey = '-----BEGIN PUBLIC KEY-----\n'
 pubkey += 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD5uIDebA2qU746e/NVPiQSBA0Q'
