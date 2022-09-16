@@ -26,6 +26,7 @@ jobs:
         pip install pipreqs
         pipreqs .
         pip install -r requirements.txt
+        pip install lxml
     - name: 'checkout'
       env:
         USERNAME: ${{ secrets.USERNAME }}

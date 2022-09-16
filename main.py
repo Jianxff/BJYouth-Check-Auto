@@ -90,7 +90,7 @@ def get_data(session):
     todo = []
     for tr in tbody:
         todo.append(tr.select('td')[1].string)
-    logging.info('todo list: %s',todo)
+    return todo
 
 
 if __name__ == '__main__':
@@ -101,7 +101,8 @@ if __name__ == '__main__':
         session = requests.Session()
         try:
             if login(session):
-                get_data(session)
+                todo = '{}'.format(get_data(session))
+                logging.info('todo list: %s',todo)
                 exit()
             elif times < RETRY:
                 logging.info('retrying... times: %d',times)
